@@ -1,13 +1,8 @@
 import { Container } from 'inversify'
-import type { IBooking } from '../enities/interfaces/IBooking'
-import { IPerson } from '../enities/interfaces/IPerson'
-import { IProperty } from '../enities/interfaces/IProperty'
-import { BookingBuilder } from '../utils/builders/BookingBuilder'
-import { BookingFaker } from '../utils/faker/BookingFaker'
+import { IBooking, IPerson, IProperty } from '@fewo-monorepo/entities'
+import { BookingBuilder, BookingFaker, PersonFaker, PropertyBuilder, PropertyFaker } from '@fewo-monorepo/utils'
 import { TYPES } from './types'
-import { PersonFaker } from '../utils/faker/PersonFaker'
-import { PropertyBuilder } from '../utils/builders/PropertyBuilder'
-import { PropertyFaker } from '../utils/faker/PropertyFaker'
+
 
 const container = new Container()
 container.bind<IPerson>(TYPES.PersonFaker).to(PersonFaker)
